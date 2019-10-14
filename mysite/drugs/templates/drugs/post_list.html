@@ -1,17 +1,6 @@
-{% load staticfiles %}
+{% extends 'blog/base.html' %}
 
-<html>
-<head>
-    <title>Django Girls Drugs</title>    
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/drugs.css' %}">
-
-
-</head>
-<body>
-    <h1>lista de post</h1>
-
+{% block content %}
     {% for post in posts %}
     <div>
         <p> publicado: {{ post.published_date }}</p>
@@ -19,7 +8,5 @@
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     {% endfor %}
+{% endblock %}
 
-
-</body>
-</html>
